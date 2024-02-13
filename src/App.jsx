@@ -1,19 +1,17 @@
 import "./styles/reset.scss";
 import "./styles/page.scss";
-import { RouterProvider, Routers, Router } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Edit from "./pages/Edit";
 
 function App() {
   return (
-    <div className="wrapper">
-      <RouterProvider>
-        <Routers>
-          <Router path="/" element={<Home />} />
-          <Router path="/edit" element={<Edit />} />
-        </Routers>
-      </RouterProvider>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/edit" element={<Edit />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

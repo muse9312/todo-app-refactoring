@@ -1,3 +1,146 @@
+@import "reset.scss";
+
+// Home.jsx
 .wrapper {
-  background: #ebebeb;
+  $this: &;
+
+  display: flex;
+  justify-content: center;
+
+  &-content {
+    width: 375px;
+    background: #ebebeb;
+  }
+
+  &-content__top {
+    padding: 33px 44px 0;
+  }
+
+  &-content__section {
+    display: flex;
+    flex-direction: column;
+    padding: 0 33px 22px;
+    margin-top: 39px;
+
+    &--itembox {
+      display: flex;
+      flex-direction: column;
+      gap: 12px 0;
+      height: calc(100vh - 202px);
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+// Header
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 36px;
+
+  &-title {
+    color: #2b2b2b;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+// InputForm
+
+.input-wrap {
+  display: flex;
+  border-radius: 45px;
+  overflow: hidden;
+
+  &__input {
+    width: 100%;
+    padding: 18px 22px;
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #d1d1d1;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  &__btn {
+    padding: 0 12px;
+    background: #07d1ad;
+
+    &--text {
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  .update {
+    background: #d129ec;
+  }
+}
+
+// ItemForm
+
+.item-wrap {
+  $this: &;
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 6px 19px 12px;
+  margin: unset;
+  border-radius: 15px;
+  background: #ffffff;
+
+  // checkbox , label
+
+  &__checkboxItem {
+    display: flex;
+    gap: 0 11px;
+    color: #2b2b2b;
+    font-size: 18px;
+    font-weight: 500;
+
+    &--checkbox {
+      position: absolute;
+      clip: rect(0 0 0 0);
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    &--label {
+      display: flex;
+      align-items: center;
+      gap: 0 12px;
+    }
+  }
+
+  // edit, delete button
+
+  &__buttonItem {
+    display: flex;
+    gap: 0 7px;
+    &--iconBtn {
+      border: none;
+      cursor: pointer;
+      background: none;
+      padding: 0;
+    }
+  }
+
+  // checkbox가 체크됐을때, 스타일 적용
+  &.checked {
+    opacity: 0.6;
+
+    #{$this}__checkboxItem--label {
+      color: #787878;
+      text-decoration: line-through;
+    }
+  }
 }
