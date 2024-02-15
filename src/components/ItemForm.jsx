@@ -3,10 +3,16 @@ import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import { IoCheckbox } from "react-icons/io5";
 import { TbEditCircle } from "react-icons/tb";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ItemForm = ({ data }) => {
+  const navigation = useNavigate();
   const { id, title } = data;
   const [isChecked, setIsChecked] = useState(false);
+
+  const handleNavigate = () => {
+    navigation("/edit");
+  };
 
   const handleChange = (e) => {
     setIsChecked(e.target.checked);
@@ -32,7 +38,11 @@ const ItemForm = ({ data }) => {
       </div>
 
       <div className="item-wrap__buttonItem">
-        <button type="button" className="item-wrap__formItem--iconBtn">
+        <button
+          type="button"
+          className="item-wrap__formItem--iconBtn"
+          onClick={handleNavigate}
+        >
           <TbEditCircle size={22} />
         </button>
         <button type="button" className="item-wrap__formItem--iconBtn">
