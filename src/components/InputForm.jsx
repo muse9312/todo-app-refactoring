@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const InputForm = ({ btnText }) => {
-  const [value, setValue] = useState();
+const InputForm = ({ btnText, onAdd }) => {
+  const [value, setValue] = useState("");
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -9,6 +9,8 @@ const InputForm = ({ btnText }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    onAdd(value);
+    setValue("");
   };
 
   return (

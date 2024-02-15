@@ -5,11 +5,13 @@ import { TbEditCircle } from "react-icons/tb";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ItemForm = ({ data }) => {
-  const navigation = useNavigate();
-  const { id, title } = data;
+const ItemForm = ({ data, onDelete }) => {
+  const { id, text } = data;
   const [isChecked, setIsChecked] = useState(false);
 
+  const navigation = useNavigate();
+
+  // edit page 이동
   const handleNavigate = () => {
     navigation("/edit");
   };
@@ -33,7 +35,7 @@ const ItemForm = ({ data }) => {
           ) : (
             <MdCheckBoxOutlineBlank size={20} />
           )}
-          {title}
+          {text}
         </label>
       </div>
 
@@ -45,7 +47,11 @@ const ItemForm = ({ data }) => {
         >
           <TbEditCircle size={22} />
         </button>
-        <button type="button" className="item-wrap__formItem--iconBtn">
+        <button
+          type="button"
+          className="item-wrap__formItem--iconBtn"
+          onClick={() => onDelete(id)}
+        >
           <IoMdCloseCircleOutline size={22} />
         </button>
       </div>
