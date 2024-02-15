@@ -4,6 +4,7 @@ import InputForm from "../components/InputForm";
 import ItemForm from "../components/ItemForm";
 import { ItemList } from "../datas/common";
 
+// ? 페이지 전체 스크롤 이슈....
 const Home = () => {
   const [newList, setNewList] = useState(ItemList);
 
