@@ -1,14 +1,17 @@
 @import "reset.scss";
-
 // Home.jsx
 .wrapper {
   $this: &;
 
   display: flex;
   justify-content: center;
-
+  height: 100%;
   &-content {
+    display: flex;
+    flex-direction: column;
     width: 375px;
+    height: 100%;
+
     background: #ebebeb;
   }
 
@@ -18,15 +21,15 @@
 
   &-content__section {
     display: flex;
+    height: 100%;
     flex-direction: column;
-    padding: 0 33px 22px;
-    margin-top: 39px;
+    overflow: hidden;
+    padding: 39px 33px 22px 33px;
 
     &--itembox {
       display: flex;
       flex-direction: column;
       gap: 12px 0;
-      height: calc(100vh - 202px);
       overflow-y: auto;
       &::-webkit-scrollbar {
         display: none;
@@ -40,7 +43,6 @@
 .header {
   display: flex;
   justify-content: center;
-  margin-bottom: 36px;
 
   &-title {
     color: #2b2b2b;
@@ -55,7 +57,7 @@
   display: flex;
   border-radius: 45px;
   overflow: hidden;
-
+  margin-top: 36px;
   &__input {
     width: 100%;
     padding: 18px 22px;
@@ -73,6 +75,9 @@
   &__btn {
     padding: 0 12px;
     background: #07d1ad;
+    &.update {
+      background: #d129ec;
+    }
 
     &--text {
       color: #ffffff;
@@ -80,12 +85,7 @@
       font-weight: 700;
     }
   }
-
-  .update {
-    background: #d129ec;
-  }
 }
-
 // ItemForm
 
 .item-wrap {

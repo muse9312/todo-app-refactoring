@@ -1,17 +1,20 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = ({ text }) => {
-  const navigater = useNavigate();
+  // const navigater = useNavigate();
 
-  const handleNavigate = () => {
-    navigater("/");
-  };
+  // const handleNavigate = () => {
+  //   navigater("/");
+  // };
 
   return (
     <div className="header">
-      <button type="button" className="header-title" onClick={handleNavigate}>
+      {/* <button type="button" className="header-title" onClick={handleNavigate}>
         {text}
-      </button>
+      </button> */}
+      <Link to="/" className="header-title">
+        {text}
+      </Link>
     </div>
   );
 };

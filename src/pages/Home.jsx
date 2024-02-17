@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import InputForm from "../components/InputForm";
-import ItemForm from "../components/ItemForm";
+import ItemContainer from "../components/ItemContainer";
 import { ItemList } from "../datas/common";
+import List from "../components/List";
 
 // ? 페이지 전체 스크롤 이슈....
 const Home = () => {
@@ -23,27 +24,29 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <div className="wrapper">
-        <div className="wrapper-content">
-          {/* top */}
-          <div className="wrapper-content__top">
-            {/* header text */}
-            <Header text={"What’s the Plan for Today?"} />
-            <InputForm btnText={"Add"} onAdd={(text) => handleAdd(text)} />
-          </div>
+    <main className="wrapper">
+      <div className="wrapper-content">
+        {/* top */}
+        <div className="wrapper-content__top">
+          {/* header text */}
+          <Header text={"What’s the Plan for Today?"} />
+          <InputForm btnText={"Add"} onAdd={(text) => handleAdd(text)} />
+        </div>
 
-          {/* section */}
-          <div className="wrapper-content__section">
-            <div className="wrapper-content__section--itembox">
-              {newList.map((item) => (
-                <ItemForm key={item.id} data={item} onDelete={handleDelete} />
-              ))}
-            </div>
-          </div>
+        {/* section */}
+        <div className="wrapper-content__section">
+          <List>
+            {newList.map((item) => (
+              <ItemContainer
+                key={item.id}
+                data={item}
+                onDelete={handleDelete}
+              />
+            ))}
+          </List>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

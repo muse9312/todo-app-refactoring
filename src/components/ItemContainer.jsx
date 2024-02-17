@@ -5,7 +5,7 @@ import { TbEditCircle } from "react-icons/tb";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ItemForm = ({ data, onDelete }) => {
+const ItemContainer = ({ data, onDelete }) => {
   const { id, text } = data;
   const [isChecked, setIsChecked] = useState(false);
 
@@ -21,7 +21,7 @@ const ItemForm = ({ data, onDelete }) => {
   };
 
   return (
-    <div className={`item-wrap ${isChecked ? "checked" : ""}`}>
+    <li className={`item-wrap ${isChecked ? "checked" : ""}`}>
       <div className="item-wrap__checkboxItem">
         <input
           type="checkbox"
@@ -42,21 +42,21 @@ const ItemForm = ({ data, onDelete }) => {
       <div className="item-wrap__buttonItem">
         <button
           type="button"
-          className="item-wrap__formItem--iconBtn"
+          className="item-wrap__formItem-iconBtn"
           onClick={handleNavigate}
         >
           <TbEditCircle size={22} />
         </button>
         <button
           type="button"
-          className="item-wrap__formItem--iconBtn"
+          className="item-wrap__formItem-iconBtn"
           onClick={() => onDelete(id)}
         >
           <IoMdCloseCircleOutline size={22} />
         </button>
       </div>
-    </div>
+    </li>
   );
 };
 
-export default ItemForm;
+export default ItemContainer;

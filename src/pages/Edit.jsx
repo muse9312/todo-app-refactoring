@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import InputForm from "../components/InputForm";
 import ItemForm from "../components/ItemForm";
+import List from "../components/List";
 import { ItemList } from "../datas/common";
 
 const Edit = () => {
@@ -11,17 +12,17 @@ const Edit = () => {
           {/* top */}
           <div className="wrapper-content__top">
             {/* header text */}
-            <Header text={"What’s the Plan for Today?"} />
+            <Header text={"후츠릿 짱"} />
             <InputForm btnText={"update"} />
           </div>
 
           {/* section */}
           <div className="wrapper-content__section">
-            <div className="wrapper-content__section--itembox">
+            <List>
               {ItemList.map((item) => (
                 <ItemForm key={item.id} data={item} />
               ))}
-            </div>
+            </List>
           </div>
         </div>
       </div>
