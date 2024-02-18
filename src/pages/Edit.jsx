@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import InputForm from "../components/InputForm";
-import ItemForm from "../components/ItemForm";
 import List from "../components/List";
+import ListContainer from "../components/ItemContainer";
 import { ItemList } from "../datas/common";
 
 const Edit = () => {
@@ -20,7 +20,7 @@ const Edit = () => {
           <div className="wrapper-content__section">
             <List>
               {ItemList.map((item) => (
-                <ItemForm key={item.id} data={item} />
+                <ListContainer key={item.id} data={item} />
               ))}
             </List>
           </div>
