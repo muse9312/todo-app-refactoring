@@ -1,4 +1,5 @@
 @import "reset.scss";
+@import "variable.scss";
 // Home.jsx
 .wrapper {
   $this: &;
@@ -12,7 +13,7 @@
     width: 375px;
     height: 100%;
 
-    background: #ebebeb;
+    background: $mainBackground;
   }
 
   &-content__top {
@@ -45,7 +46,7 @@
   justify-content: center;
 
   &-title {
-    color: #2b2b2b;
+    color: $title;
     font-size: 18px;
     font-weight: 500;
   }
@@ -66,7 +67,7 @@
     }
 
     &::placeholder {
-      color: #d1d1d1;
+      color: $placeholder;
       font-size: 18px;
       font-weight: 500;
     }
@@ -74,13 +75,13 @@
 
   &__btn {
     padding: 0 12px;
-    background: #07d1ad;
+    background: $addBtnBackground;
     &.update {
-      background: #d129ec;
+      background: $updateBtnBackground;
     }
 
     &--text {
-      color: #ffffff;
+      color: $text;
       font-size: 18px;
       font-weight: 700;
     }
@@ -95,14 +96,14 @@
   padding: 19px 6px 19px 12px;
   margin: unset;
   border-radius: 15px;
-  background: #ffffff;
+  background: $itemboxBackground;
 
   // checkbox , label
 
   &__checkboxItem {
     display: flex;
     gap: 0 11px;
-    color: #2b2b2b;
+    color: $itemboxText;
     font-size: 18px;
     font-weight: 500;
 
@@ -139,7 +140,7 @@
     opacity: 0.6;
 
     #{$this}__checkboxItem--label {
-      color: #787878;
+      color: $checkedItembox;
       text-decoration: line-through;
     }
   }
