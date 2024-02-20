@@ -22,14 +22,14 @@ const ItemContainer = ({ data, onDelete }) => {
 
   return (
     <li className={`item-wrap ${isChecked ? "checked" : ""}`}>
-      <div className="item-wrap__checkboxItem">
+      <div className="item-wrap__checkbox_item">
         <input
           type="checkbox"
-          className="item-wrap__checkboxItem--checkbox"
+          className="item-wrap__checkbox_item-checkbox"
           id={id}
           onChange={handleChange}
         />
-        <label htmlFor={id} className="item-wrap__checkboxItem--label">
+        <label htmlFor={id} className="item-wrap__checkbox_item-label">
           {isChecked ? (
             <IoCheckbox size={20} />
           ) : (
@@ -39,17 +39,17 @@ const ItemContainer = ({ data, onDelete }) => {
         </label>
       </div>
 
-      <div className="item-wrap__buttonItem">
+      <div className="item-wrap__button_item">
         <button
           type="button"
-          className="item-wrap__formItem-iconBtn"
+          className="item-wrap__button_item-button"
           onClick={handleNavigate}
         >
           <TbEditCircle size={22} />
         </button>
         <button
           type="button"
-          className="item-wrap__formItem-iconBtn"
+          className="item-wrap__button_item-button"
           onClick={() => onDelete(id)}
         >
           <IoMdCloseCircleOutline size={22} />

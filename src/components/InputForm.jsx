@@ -26,7 +26,7 @@ const InputForm = ({ btnText, onAdd }) => {
         type="submit"
         className={`input-wrap__btn ${btnText === "update" ? "update" : ""}`}
       >
-        <span className="input-wrap__btn--text">{btnText}</span>
+        <span className="input-wrap__btn-text">{btnText}</span>
       </button>
     </form>
   );

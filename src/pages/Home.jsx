@@ -5,7 +5,6 @@ import ItemContainer from "../components/ItemContainer";
 import { ItemList } from "../datas/common";
 import List from "../components/List";
 
-// ? 페이지 전체 스크롤 이슈....
 const Home = () => {
   const [newList, setNewList] = useState(ItemList);
 
@@ -34,7 +33,7 @@ const Home = () => {
         </div>
 
         {/* section */}
-        <div className="wrapper-content__section">
+        <article className="wrapper-content__section">
           <List>
             {newList.map((item) => (
               <ItemContainer
@@ -44,7 +43,7 @@ const Home = () => {
               />
             ))}
           </List>
-        </div>
+        </article>
       </div>
     </main>
   );

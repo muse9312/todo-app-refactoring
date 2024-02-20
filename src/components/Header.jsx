@@ -8,14 +8,14 @@ const Header = ({ text }) => {
   // };
 
   return (
-    <div className="header">
+    <header className="header">
       {/* <button type="button" className="header-title" onClick={handleNavigate}>
         {text}
       </button> */}
       <Link to="/" className="header-title">
         {text}
       </Link>
-    </div>
+    </header>
   );
 };
 

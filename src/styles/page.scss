@@ -27,7 +27,7 @@
     overflow: hidden;
     padding: 39px 33px 22px 33px;
 
-    &--itembox {
+    &-itembox {
       display: flex;
       flex-direction: column;
       gap: 12px 0;
@@ -80,14 +80,14 @@
       background: $updateBtnBackground;
     }
 
-    &--text {
+    &-text {
       color: $text;
       font-size: 18px;
       font-weight: 700;
     }
   }
 }
-// ItemForm
+// ItemContainer
 
 .item-wrap {
   $this: &;
@@ -100,14 +100,14 @@
 
   // checkbox , label
 
-  &__checkboxItem {
+  &__checkbox_item {
     display: flex;
     gap: 0 11px;
     color: $itemboxText;
     font-size: 18px;
     font-weight: 500;
 
-    &--checkbox {
+    &-checkbox {
       position: absolute;
       clip: rect(0 0 0 0);
       width: 1px;
@@ -115,7 +115,7 @@
       overflow: hidden;
     }
 
-    &--label {
+    &-label {
       display: flex;
       align-items: center;
       gap: 0 12px;
@@ -124,10 +124,10 @@
 
   // edit, delete button
 
-  &__buttonItem {
+  &__button_item {
     display: flex;
     gap: 0 7px;
-    &--iconBtn {
+    &-button {
       border: none;
       cursor: pointer;
       background: none;
@@ -139,7 +139,7 @@
   &.checked {
     opacity: 0.6;
 
-    #{$this}__checkboxItem--label {
+    #{$this}__checkbox_item-label {
       color: $checkedItembox;
       text-decoration: line-through;
     }
