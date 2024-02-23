@@ -31,7 +31,6 @@ const Home = () => {
           <Header text={"What’s the Plan for Today?"} />
           <InputForm btnText={"Add"} onAdd={(text) => handleAdd(text)} />
         </div>
-
         {/* section */}
         <article className="wrapper-content__section">
           <List>
