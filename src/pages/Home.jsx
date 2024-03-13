@@ -1,26 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import InputForm from "../components/InputForm";
 import ItemContainer from "../components/ItemContainer";
-import { ItemList } from "../datas/common";
 import List from "../components/List";
 
 const Home = () => {
-  const [newList, setNewList] = useState(ItemList);
+  const [todoList, setTodoList] = useState([]);
 
   // list 삭제
   const handleDelete = (id) => {
-    setNewList(newList.filter((item) => item.id !== id));
+    // const filterList = todoList.filter((item) => item.id !== id)
+    // setTodoList(filterList);
+    setTodoList((prev) => prev.filter((item) => item.id !== id));
   };
 
   // list 추가
   const handleAdd = (text) => {
+    // TODO: 중복체크
     const newltem = {
       id: Date.now(),
-      text: text,
+      isComplete: false,
+      text,
     };
-    setNewList([newltem, ...newList]);
+    setTodoList([...todoList, newltem]);
   };
+
+  useEffect(() => {
+    console.log("todoList", todoList);
+  }, [todoList]);
 
   return (
     <main className="wrapper">
@@ -29,12 +36,12 @@ const Home = () => {
         <div className="wrapper-content__top">
           {/* header text */}
           <Header text={"What’s the Plan for Today?"} />
-          <InputForm btnText={"Add"} onAdd={(text) => handleAdd(text)} />
+          <InputForm btnText={"Add"} onAdd={handleAdd} />
         </div>
         {/* section */}
         <article className="wrapper-content__section">
           <List>
-            {newList.map((item) => (
+            {todoList.map((item) => (
               <ItemContainer
                 key={item.id}
                 data={item}

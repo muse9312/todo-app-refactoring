@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import InputForm from "../components/InputForm";
 import List from "../components/List";
 import ListContainer from "../components/ItemContainer";
-import { ItemList } from "../datas/common";
+import { itemList } from "../datas/common";
 
 const Edit = () => {
   return (
@@ -19,7 +19,7 @@ const Edit = () => {
           {/* section */}
           <div className="wrapper-content__section">
             <List>
-              {ItemList.map((item) => (
+              {itemList.map((item) => (
                 <ListContainer key={item.id} data={item} />
               ))}
             </List>
